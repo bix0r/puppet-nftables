@@ -29,3 +29,4 @@ include "inet-filter.nft"
 include "ip-<%= $nftables::nat_table_name %>.nft"
 include "ip6-<%= $nftables::nat_table_name %>.nft"
 <% } -%>
+include "post-custom-*.nft"
