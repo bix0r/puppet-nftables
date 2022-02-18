@@ -20,6 +20,7 @@
 # @param size limits the maximum number of elements of the set.
 # @param policy determines set selection policy.
 # @param auto_merge ?
+# @param counter add counters to elements in set.
 # @param content specify content of set.
 # @param source specify source of set.
 define nftables::set (
@@ -35,6 +36,7 @@ define nftables::set (
   Optional[Integer] $size = undef,
   Optional[Enum['performance', 'memory']] $policy = undef,
   Boolean $auto_merge = false,
+  Boolean $counter = false,
   Optional[String] $content = undef,
   Optional[Variant[String,Array[String,1]]] $source = undef,
 ) {
@@ -78,6 +80,7 @@ define nftables::set (
               'size'        => $size,
               'policy'      => $policy,
               'auto_merge'  => $auto_merge,
+              'counter'     => $counter,
             }
           )
         }
