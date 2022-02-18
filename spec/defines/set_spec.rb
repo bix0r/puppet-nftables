@@ -102,6 +102,25 @@ describe 'nftables::set' do
         }
       end
 
+      describe 'using counter' do
+        let(:params) do
+          {
+            type: 'ipv4_addr',
+            counter: true
+          }
+        end
+
+        it { is_expected.to compile }
+
+        it {
+          expect(subject).to contain_concat__fragment('nftables-inet-filter-set-my_set').with(
+            target: 'nftables-inet-filter',
+            content: %r{^  set my_set \{\n    type ipv4_addr\n    counter\n  \}$}m,
+            order: '10'
+          )
+        }
+      end
+
       describe 'using ether_addr as type and custom policy' do
         let(:params) do
           {

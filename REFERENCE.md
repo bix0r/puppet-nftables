@@ -1526,6 +1526,7 @@ The following parameters are available in the `nftables::set` defined type:
 * [`size`](#size)
 * [`policy`](#policy)
 * [`auto_merge`](#auto_merge)
+* [`counter`](#set-counter)
 * [`content`](#content)
 * [`source`](#source)
 
@@ -1618,6 +1619,14 @@ determines set selection policy.
 Default value: ``undef``
 
 ##### <a name="auto_merge"></a>`auto_merge`
+
+Data type: `Boolean`
+
+?
+
+Default value: ``false``
+
+##### <a name="set-counter"></a>`counter`
 
 Data type: `Boolean`
 

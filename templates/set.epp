@@ -7,6 +7,7 @@
       Optional[Integer]       $size,
       Optional[String]        $policy,
       Boolean                 $auto_merge,
+      Boolean                 $counter,
 | -%>
   set <%= $name %> {
     type <%= $type %>
@@ -30,5 +31,8 @@
     <%- } -%>
     <%- if $auto_merge { -%>
     auto-merge
+    <%- } -%>
+    <%- if $counter { -%>
+    counter
     <%- } -%>
   }
